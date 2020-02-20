@@ -26,7 +26,8 @@ def load():
   wordsinline=file.split(" ")
   for items in wordsinline:
     normalizedwords=re.sub(r'[\W_]+', '', items)#only inludes a-z, A-Z, 0-9
-    words.append(normalizedwords)
+    for w in normalizedwords:
+      words.append(w.lower())
   #words.append(wordsinline)
   print words
   dicsizetxt.set(len(words))
